@@ -1,2 +1,2 @@
-# numera-aesthetic
-Aesthetics Numera
+# ebanx-aesthetic
+Aesthetics EBANX
