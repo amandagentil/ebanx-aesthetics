@@ -192,7 +192,9 @@ ebanx_theme <- function() {
                   plot.margin = margin(t = 0.5, r = 0.5, b = 0.5, l = 0.5, unit = "cm"),
                   complete = TRUE,
                   panel.grid.major = element_blank(),
-                  panel.grid.minor = element_blank()
+                  panel.grid.minor = element_blank(),
+                  plot.background = element_blank(),
+
                   )
   
   return(p)
