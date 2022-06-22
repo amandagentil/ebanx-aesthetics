@@ -179,7 +179,6 @@ ebanx_theme <- function() {
   
  p <-  theme_grey() +
             theme(panel.grid = element_blank(),
-                  panel.background = element_blank(),
                   title = element_text(family = "Inter", colour = "#4D4D4D"),
                   axis.text = element_text(family = "Inter", colour = "#4D4D4D", size = 8),
                   axis.text.x = element_text(vjust = 2),
@@ -194,6 +193,7 @@ ebanx_theme <- function() {
                   panel.grid.major = element_blank(),
                   panel.grid.minor = element_blank(),
                   plot.background = element_blank(),
+                  panel.background = element_rect(..., color = NA)
 
                   )
   
