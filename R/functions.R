@@ -177,7 +177,7 @@ ebanx_theme <- function() {
   
  
   
- p <-  theme_grey() +
+ p <-  theme_classic() +
             theme(panel.grid = element_blank(),
                   title = element_text(family = "Inter", colour = "#4D4D4D"),
                   axis.text = element_text(family = "Inter", colour = "#4D4D4D", size = 8),
