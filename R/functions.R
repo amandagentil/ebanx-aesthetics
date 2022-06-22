@@ -38,7 +38,9 @@ ebanx_cols <- function(...) {
 
 
 ebanx_palettes <- list(
-  `main`  = ebanx_cols("azul", "warm_gray"),
+  
+  `single_blue` = ebanx_cols("blue")
+  `main`  = ebanx_cols("blue", "warm_gray"),
 
   `light`  = ebanx_cols("off_white", "light_blue", "blue", "median_blue", "dark_blue"),
 
