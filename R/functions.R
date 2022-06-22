@@ -15,7 +15,7 @@
 
 ebanx_colors <- c(
   `off_white`  = "#F2F2F2",
-  `azul`   = "#0051FF",
+  `blue`   = "#0051FF",
   `dark_blue` = "#000E2B",
   `aqua`   = "#4BDBBA",
   `warm_gray`   = "#BEB9AF",
