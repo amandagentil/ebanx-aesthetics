@@ -187,7 +187,7 @@ ebanx_theme <- function() {
                   axis.ticks = element_line(colour = "#8F8F8F"),
                   panel.border = element_blank(),
                   axis.line = element_line(color = "#ebebeb", size = 0.25),
-                  strip.background = element_rect(fill = '#ebebeb'),
+                  strip.background = element_blank(),
                   strip.text = element_text(family = "Inter", colour = "#474747", size = 9),
                   plot.margin = margin(t = 0.5, r = 0.5, b = 0.5, l = 0.5, unit = "cm"),
                   complete = TRUE
