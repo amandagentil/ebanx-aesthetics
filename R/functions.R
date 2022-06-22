@@ -13,11 +13,15 @@
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
 
-numera_colors <- c(
-  `cinza_escuro`  = "#4D4D4D",
-  `cinza_claro`   = "#D9D9D9",
-  `cinza_intermediario` = "grey",
-  `azul_numera`   = "#5288DB")
+ebanx_colors <- c(
+  `off_white`  = "#F2F2F2",
+  `azul`   = "#0051FF",
+  `dark_blue` = "#000E2B",
+  `aqua`   = "#4BDBBA",
+  `warm_gray`   = "#BEB9AF",
+  `aqua`   = "#4BDBBA",
+  `light_blue` = "#B6CAF5",
+  `median_blue` = "#0040CA")
 
 #' Function to extract drsimonj colors as hex codes
 #'
@@ -34,12 +38,12 @@ numera_cols <- function(...) {
 
 
 
-numera_palettes <- list(
-  `main`  = numera_cols("azul_numera", "cinza_escuro"),
+ebanx_palettes <- list(
+  `main`  = ebanx_cols("azul", "warm_gray"),
 
-  `light`  = numera_cols("azul_numera", "cinza_intermediario"),
+  `light`  = ebanx_cols("off_white", "light_blue", "blue", "median_blue", "dark_blue"),
 
-  `mixed` = numera_cols("azul_numera", "cinza_escuro", "cinza_intermediario", "cinza_claro")
+  `mixed` = ebanx_cols("blue", "aqua", "warm_gray", "dark_blue")
 )
 
 
@@ -50,8 +54,8 @@ numera_palettes <- list(
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments to pass to colorRampPalette()
 #'
-numera_pal <- function(palette = palette, reverse = FALSE, ...) {
-  pal <- numera_palettes[[palette]]
+ebanx_pal <- function(palette = palette, reverse = FALSE, ...) {
+  pal <- ebanx_palettes[[palette]]
 
   if (reverse) pal <- rev(pal)
 
@@ -68,10 +72,10 @@ numera_pal <- function(palette = palette, reverse = FALSE, ...) {
 #' @param ... Additional arguments passed to discrete_scale() or
 #'            scale_color_gradientn(), used respectively when discrete is TRUE or FALSE
 #'
-scale_color_numera <- function(palette = palette, discrete = TRUE, reverse = FALSE, ...) {
-  pal <- numera_pal(palette = palette, reverse = reverse)
+scale_color_ebanx <- function(palette = palette, discrete = TRUE, reverse = FALSE, ...) {
+  pal <- ebanx_pal(palette = palette, reverse = reverse)
   if (discrete) {
-    discrete_scale("colour", paste0("numera_", palette), palette = pal, ...)
+    discrete_scale("colour", paste0("ebanx_", palette), palette = pal, ...)
   } else {
     scale_color_gradientn(colours = pal(256), ...)
   }
@@ -85,11 +89,11 @@ scale_color_numera <- function(palette = palette, discrete = TRUE, reverse = FAL
 #' @param ... Additional arguments passed to discrete_scale() or
 #'            scale_fill_gradientn(), used respectively when discrete is TRUE or FALSE
 #'
-scale_fill_numera <- function(palette = palette, discrete = TRUE, reverse = FALSE, ...) {
-  pal <- numera_pal(palette = palette, reverse = reverse)
+scale_fill_ebanx <- function(palette = palette, discrete = TRUE, reverse = FALSE, ...) {
+  pal <- ebanx_pal(palette = palette, reverse = reverse)
 
   if (discrete) {
-    discrete_scale("fill", paste0("numera_", palette), palette = pal, ...)
+    discrete_scale("fill", paste0("ebanx_", palette), palette = pal, ...)
   } else {
     scale_fill_gradientn(colours = pal(256), ...)
   }
@@ -163,7 +167,7 @@ fct_lollipop_graph <- function(data, x, y1, y2, legenda1, legenda2, fct) {
 }
 
 
-numera_theme <- function() {
+ebanx_theme <- function() {
   
   require(ggplot2)
   require(ggthemes)
@@ -174,15 +178,15 @@ numera_theme <- function() {
  p <-  theme_grey() +
             theme(panel.grid = element_blank(),
                   panel.background = element_rect(fill = "white"),
-                  title = element_text(family = "Roboto Light", colour = "#4D4D4D"),
-                  axis.text = element_text(family = "Roboto Light", colour = "#4D4D4D", size = 8),
+                  title = element_text(family = "Inter", colour = "#4D4D4D"),
+                  axis.text = element_text(family = "Inter", colour = "#4D4D4D", size = 8),
                   axis.text.x = element_text(vjust = 2),
-                  legend.text = element_text(family = "Roboto Light", colour = "#4D4D4D"),
+                  legend.text = element_text(family = "Inter", colour = "#4D4D4D"),
                   axis.ticks = element_line(colour = "#8F8F8F"),
                   panel.border = element_blank(),
                   axis.line = element_line(color = "#ebebeb", size = 0.25),
                   strip.background = element_rect(fill = '#ebebeb'),
-                  strip.text = element_text(family = "Roboto Light", colour = "#474747", size = 9),
+                  strip.text = element_text(family = "Inter", colour = "#474747", size = 9),
                   plot.margin = margin(t = 0.5, r = 0.5, b = 0.5, l = 0.5, unit = "cm"),
                   complete = TRUE
                   )
