@@ -27,13 +27,13 @@ ebanx_colors <- c(
 #'
 #' @param ... Character names of drsimonj_colors
 #'
-numera_cols <- function(...) {
+ebanx_cols <- function(...) {
   cols <- c(...) 
 
   if (is.null(cols))
     return (drsimonj_colors)
 
-  numera_colors[cols]
+  ebanx_colors[cols]
 }
 
 
