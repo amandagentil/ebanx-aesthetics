@@ -177,13 +177,13 @@ ebanx_theme <- function() {
   
  
   
- p <-  theme_classic() +
+ p <-  theme_grey() +
             theme(panel.grid = element_blank(),
                   title = element_text(family = "Inter", colour = "#4D4D4D"),
                   axis.text = element_text(family = "Inter", colour = "#4D4D4D", size = 8),
                   axis.text.x = element_text(vjust = 2),
                   legend.text = element_text(family = "Inter", colour = "#4D4D4D"),
-                  axis.ticks = element_line(colour = "#8F8F8F"),
+                  axis.ticks = element_blank(),
                   panel.border = element_blank(),
                   axis.line = element_blank(),
                   strip.background = element_blank(),
